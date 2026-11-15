@@ -27,7 +27,7 @@ User rules that apply:
 - "Just do it" once the script is approved.
 
 ## Start here (setup, checked 2026-11-15 on Windows)
-The working Remotion project is `C:\dev\infoinlet-video` (outside OneDrive on purpose). Use it for every short: one folder per short under `src/videos/<name>/`, one `<Composition>` per short in `src/Root.tsx`.
+The working Remotion project is `C:\dev\infoinlet-video` (outside OneDrive on purpose). On another machine use the same path on Windows, or `~/infoinlet-video` on Mac/Linux, unless the user names a different folder; never put it inside OneDrive, Dropbox or iCloud. Use it for every short: one folder per short under `src/videos/<name>/`, one `<Composition>` per short in `src/Root.tsx`.
 - If the project is missing, rebuild it from this skill:
   1. Copy `templates/project/*` to the new project folder (rename `gitignore.txt` to `.gitignore`).
   2. Copy `templates/bridge/` to `src/videos/bridge/`, `templates/scripts/` to `scripts/`, `templates/kenney/` to `public/bridge/kenney/`.
@@ -38,7 +38,7 @@ The working Remotion project is `C:\dev\infoinlet-video` (outside OneDrive on pu
   `export PATH="$PWD/node_modules/@remotion/compositor-win32-x64-msvc:$PATH"`.
   That build has no `ebur128` filter, so the ffmpeg loudness lines come back empty; rely on the loudness numbers `mix.py` computes itself.
 - Do not use `npx remotion render` on this PC. Use `node scripts/render.mjs` (step 10).
-- Voice: the user's shorts use Kokoro TTS (`kokoro-js`); a working `tts/gen.mjs` is in the newest project under `Desktop\Office-Work\shorts\`. Reuse it to make `voice.wav` and word timings unless the user supplies a recording.
+- Voice: the user's shorts use Kokoro TTS (`kokoro-js`); a working `tts/gen.mjs` is in the newest project under `Desktop\Office-Work\shorts\`. Reuse it to make `voice.wav` and word timings unless the user supplies a recording. If that folder does not exist on this machine, `npm install kokoro-js` in the project and write a small script that does the same, or ask the user for a recorded `voice.wav`.
 - Keep each short's script, voice and sound in `C:\dev\infoinlet-video\shorts\<name>\` (where this file says `~/bridge-short/`).
 - When `/infoinlet-video` is run with only a topic, start at step 1 and stop for approval after the script (step 2). After approval, run to the end without asking.
 
