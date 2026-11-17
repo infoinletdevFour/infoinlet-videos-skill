@@ -110,7 +110,8 @@ After about a minute you should have `out/bridge/test_400.jpg` and `out/bridge/t
 | 8. Sound | Generates music and sound effects and mixes them under the voice | Nothing |
 | 9. Look checks | Renders test pictures and fixes what looks wrong | Look at them if you like |
 | 10. Final render | Renders the 2K video (1440x2560) with sound and runs a frame-by-frame check | Wait; this is the slow part |
-| 11. Deliver | Gives you the final MP4 | Watch it, ask for changes |
+| 11. Publish text | Writes the title, description, hashtags and a pinned comment into `shorts/<name>/PUBLISH.md` | Copy them when you upload |
+| 12. Deliver | Gives you the final MP4 with the title and description | Watch it, ask for changes |
 
 Claude only stops for you at step 2. After you approve the script it runs to the end.
 
@@ -135,7 +136,7 @@ Inside the video project (`C:\dev\infoinlet-video`):
 |---|---|
 | `src/videos/<name>/` | The code of one video (one folder per video) |
 | `src/Root.tsx` | The list of all videos |
-| `shorts/<name>/` | That video's script, voice and sound files |
+| `shorts/<name>/` | That video's script, voice and sound files, plus `PUBLISH.md` (title, description, hashtags) |
 | `out/<name>/` | Test pictures, quality reports and the **final MP4** |
 | `public/` | 3D models and other assets |
 

@@ -93,7 +93,13 @@ The working Remotion project is `C:\dev\infoinlet-video` (outside OneDrive on pu
     - Test a short range first with `--frames 380-439`. A 60-frame 2K test took about 4 minutes here including the bundle, so start the full render in the background.
     - QA: `python scripts/short_qa.py final.mp4 out/<name>/qa shots.json` checks every frame for black, white, frozen and pop frames, plus loudness and sheets.
     - Fix anything it finds, then run a deep Opus audit.
-11. **Deliver.** Copy the final mp4 to the Desktop (never overwrite an earlier delivered video; save revisions as `-v2`), update memory, write notes.
+11. **Publish text.** Write `shorts/<name>/PUBLISH.md` for every video, without being asked:
+    - Title (under 60 characters, the absurd fact, no clickbait the video does not pay off) plus two alternatives.
+    - Description: 2-4 sentences that restate the hook, tease the ending and end with a question; then 4-6 hashtags.
+    - A pinned comment with one extra checked fact.
+    - Posting settings: which frame to use as the cover, and turn on the AI-generated label when the voice is text-to-speech.
+    - Use only facts marked Checked in `SCRIPT.md`. Never name the reference channel.
+12. **Deliver.** Copy the final mp4 to the Desktop (never overwrite an earlier delivered video; save revisions as `-v2`). In the final message give the video path and paste the title and description in full so the user can copy them. Update memory, write notes.
 
 ## Final look values (bridge after 4 verifier rounds; all in `templates/bridge/`)
 Start every new short from `templates/bridge/` (copy to `src/videos/<name>/`): the look lives in these values, the
